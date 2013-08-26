@@ -1,0 +1,24 @@
+<%= render  partial: 'post', locals: {post: @post} %>
+
+<% if @post.comments.any? %>
+<% @post.comments.each do |comment| %>
+<div class="comment">
+	<i class="icon-large icon-comment"></i> Anonymous Said...
+	<% if current_user.role.name == "Admin" %>
+	<%= link_to "delete", comment, method: :delete, confirm: "Are you sure?", class: "pull-right" %>
+	<% end%>
+	<p>
+		<%= simple_format(comment.body) %>
+	</p>
+	<%= time_ago_in_words comment.created_at %> ago
+</div>
+<% end%>
+<% end%>
+
+<p class="body-padding">
+	<%= form_for [@post, @post.comments.build] do |f| %>
+	<%= f.label :body, "Your comment", class: 'title-comment'%>
+	<%= f.text_area :body, size: '10x10' %>
+	<%= f.submit "Submit", class: 'btn btn-primary btn-large'%>
+	<% end%>
+</p>

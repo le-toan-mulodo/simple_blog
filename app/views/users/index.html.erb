@@ -1,0 +1,35 @@
+<h3>List Users</h3>
+<%= will_paginate @users %>
+<table class="table table-striped table-bordered">
+
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Picture </th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>Sex</th>
+			<th>Delete</th>
+		</tr>
+	
+	</thead>
+	<tbody>
+		<% @users.each do |user|%>
+
+		<tr>
+			<td><%= user.name%></td>
+			<td><%= gravatar_for user %></td>
+			<td><%= user.email%></td>
+			<td><%= user.address%></td>
+			<td> <%= (user.male == true)?"Male": "Female"%> </td>
+			<% if current_user != user%>
+			<td> <%= link_to "Delete", user, method: :delete, confirm: "Are you sure?"%> </td>
+			<% else%>
+			<td>Here you are</td>
+
+			<%end %>
+		</tr>
+		<% end%>
+	</tbody>
+</table>
+<%= will_paginate @users %>

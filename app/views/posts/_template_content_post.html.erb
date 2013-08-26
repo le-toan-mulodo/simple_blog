@@ -1,0 +1,21 @@
+<h1><%= post.title %></h1>
+<span class="timestampe"> Posted <%= time_ago_in_words(post.created_at)%> ago</span>
+|
+<span class="timestampe"> Updated <%= time_ago_in_words(post.updated_at)%> ago</span>
+<br/>
+<span class="timestampe"> by <%= (post.user.name)%> </span>
+
+<% if current_user?(post.user)%>
+<div class="pull-right">
+	<%= link_to "edit", edit_post_path(post)%>
+	|
+	<%= link_to "delete", 	post, method: :delete, confirm: "Are your sure?" %>
+</div>
+<% end %>
+<p class="body-padding">
+	<% if current_page?(posts_path)%>
+	<%= cut_body post.body %>
+	<% else%>
+	<%= post.body %>
+	<%end %>
+</p>

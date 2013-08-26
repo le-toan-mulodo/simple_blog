@@ -1,0 +1,49 @@
+<div class="body-padding">
+	<h1><%= post.title %></h1>
+	<div class="alert alert-info">
+		<span class="timestampe"> Posted <%= time_ago_in_words(post.created_at)%> ago</span>
+		|
+		<span class="timestampe"> Updated <%= time_ago_in_words(post.updated_at)%> ago</span>
+		<% unless current_page?(posts_path)%>
+			<span class="pull-right"><i class="icon-list"></i> <%= link_to "Back to lists", posts_path %> </span>
+		<% end%>
+		
+		<br/>
+		
+		<span class="timestampe"> by <%= (post.user.name)%> </span>
+
+		<% if current_user?(post.user)%>
+		<div class="pull-right">
+			<i class="icon-delete-point"></i>
+			<i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%>
+			|
+			<i class="icon-trash"></i><%= link_to "delete", 	post, method: :delete, confirm: "Are your sure?" %>			
+		</div>
+
+		<% end %>
+		
+	</div>
+	<p class="body-padding">
+		<% if current_page?(posts_path)%>
+		<%= cut_body post.body.html_safe %>
+		<div>
+			<%= link_to "Read more >>", post_path(post)%>
+		</div>
+		<% else%>
+		<%= simple_format(post.body) %>
+		<%end %>
+
+	</p>
+
+	<% if post.comments.any?%>
+	<div class="alert alert-info">
+		<i class="icon-comment icon-large"> </i> <%= pluralize(post.comments.count, "comment") %>
+	</div>
+	<% else%>
+	<div class="alert alert-info">
+		<i class="icon-comment icon-large"> </i> No comments
+	</div>
+	<%end %>
+
+</div>
+

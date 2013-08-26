@@ -1,0 +1,14 @@
+<% if object.errors.any?%>
+<div id="error_explanation">
+	<div class="alert alert-error">
+		The form has <%= pluralize(object.errors.count, "error")%>
+	</div>
+	<ul>
+		<%= object.errors.full_messages do |message| %>
+		<li>
+			<%= message if object.errors.full_messages.first == message %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end%>
