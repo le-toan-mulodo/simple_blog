@@ -1,6 +1,7 @@
 <div class="body-padding">
 	<h1><%= post.title %></h1>
 	<div class="alert alert-info">
+		<i class="icon-time"></i>
 		<span class="timestampe"> Posted <%= time_ago_in_words(post.created_at)%> ago</span>
 		|
 		<span class="timestampe"> Updated <%= time_ago_in_words(post.updated_at)%> ago</span>
@@ -10,7 +11,7 @@
 		
 		<br/>
 		
-		<span class="timestampe"> by <%= (post.user.name)%> </span>
+		<span class="timestampe"> by <i class="icon-large icon-user"></i><%= (post.user.name)%> </span>
 
 		<% if current_user?(post.user)%>
 		<div class="pull-right">
