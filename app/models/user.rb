@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  
+ include ActiveModel::ForbiddenAttributesProtection
+   
+   
   #association among models
   has_many :posts, dependent: :destroy
   belongs_to :role

@@ -183,3 +183,25 @@ input, textarea, select, .uneditable-input {
 {
   clear: both
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-color: black
+}
+
+.content-bottom
+{
+  margin-bottom: 50px
+}
+
+
+
+.small-padding
+{
+  padding:20px !important
+}
+

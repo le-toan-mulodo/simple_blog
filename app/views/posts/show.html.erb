@@ -14,7 +14,7 @@
 	<% end%>
 <% end%>
 
-<div class="padding-content-left">
+<div class="padding-content-left content-bottom">
 	<%= form_for [@post, @post.comments.build] do |f| %>
 	<%= f.label :body, "Your comment", class: 'title-comment'%>
 	<%= f.text_area :body, size: '10x10', class: 'input-xxlarge' %>
