@@ -37,8 +37,7 @@ p {
   text-decoration: none;
 }
 
-footer {
-  margin-top: 350px;
+footer {  
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
@@ -153,7 +152,7 @@ input, textarea, select, .uneditable-input {
 {      
   padding-top: 20px;
   padding-left: 10px;
-  margin: 5px;
+  margin: 5px;  
 }
 
 .title-comment
@@ -167,4 +166,20 @@ input, textarea, select, .uneditable-input {
     bottom: 0;
     right: 20px;
     display: none;
+}
+
+.padding-content-left
+{
+  padding-left: 20px;
+  margin: 15px;
+}
+
+.border-blue-dash
+{  
+  border: dashed 2px #48B1D9;  
+}
+
+.clear-both
+{
+  clear: both
 }

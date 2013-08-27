@@ -1,4 +1,4 @@
-  module SessionsHelper
+module SessionsHelper
   def sign_in(user)
     session[:remember_token] = user.remember_token
     self.current_user = user
@@ -17,10 +17,10 @@
   end
 
   def current_user?(user)
-    (user == current_user) || (user.role.name == "Admin")
+    return (user == current_user) || (current_user && current_user.role && current_user.role.name == "Admin")
   end
-  
-   def signed_in_user
+
+  def signed_in_user
     unless signed_in?
       save_url
       redirect_to signin_path, notice: "Please sign in." unless signed_in?
@@ -39,7 +39,7 @@
     session.delete(:return_to)
   end
 
-  def store_location
+  def save_url
     session[:return_to] = request.url
   end
 end

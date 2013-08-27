@@ -1,24 +1,24 @@
 <%= render  partial: 'post', locals: {post: @post} %>
 
 <% if @post.comments.any? %>
-<% @post.comments.each do |comment| %>
-<div class="comment">
-	<i class="icon-large icon-comment"></i> Anonymous Said...
-	<% if current_user.role.name == "Admin" %>
-	<%= link_to "delete", comment, method: :delete, confirm: "Are you sure?", class: "pull-right" %>
+	<% @post.comments.each do |comment| %>
+	<div class="comment">
+		<i class="icon-large icon-user"></i> <%= (comment.user.nil?)?"Anonymous":comment.user.name %> | <%= time_ago_in_words comment.created_at %> ago
+		<% if  current_user && current_user.role.name == "Admin" %>
+			<i class="icon-large icon-trash pull-right"></i><%= link_to "delete", comment, method: :delete, confirm: "Are you sure?", class: "pull-right" %>
+		<% end%>
+		<div class="padding-content-left border-blue-dash">
+			<%= simple_format(comment.body) %>
+		</div>
+	</div>
 	<% end%>
-	<p>
-		<%= simple_format(comment.body) %>
-	</p>
-	<%= time_ago_in_words comment.created_at %> ago
-</div>
-<% end%>
 <% end%>
 
-<p class="body-padding">
+<div class="padding-content-left">
 	<%= form_for [@post, @post.comments.build] do |f| %>
 	<%= f.label :body, "Your comment", class: 'title-comment'%>
-	<%= f.text_area :body, size: '10x10' %>
+	<%= f.text_area :body, size: '10x10', class: 'input-xxlarge' %>
+	<br/>
 	<%= f.submit "Submit", class: 'btn btn-primary btn-large'%>
 	<% end%>
-</p>
+</div>

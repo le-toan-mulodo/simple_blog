@@ -16,12 +16,12 @@
 					<li>
 						<%= link_to "Users", users_path %>
 					</li>
+					<li>
+						<%= link_to "Your articles", current_user %>
+					</li>
 					<li id="fat-menu" class="dropdown">
 						<a href="#" id="drop-toggle" class="dropdown-toggle" data-toggle="dropdown"> <%= "#{current_user.name} (#{current_user.role.name})" %> <b class="caret"></b> </a>
 						<ul class="dropdown-menu">
-							<li>
-								<%= link_to "Profile", current_user %>
-							</li>
 							<li>
 								<%= link_to "Settings", edit_user_path(current_user) %>
 							</li>

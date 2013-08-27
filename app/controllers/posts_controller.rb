@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
-  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :signed_in_user, only: [:create, :destroy, :edit, :update, :new]
   before_filter :check_yourself, only: [:destroy, :edit, :update]
+  
   def create
     @post = current_user.posts.build(post_params)
     if @post.save

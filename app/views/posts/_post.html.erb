@@ -14,14 +14,15 @@
 		<span class="timestampe"> by <i class="icon-large icon-user"></i><%= (post.user.name)%> </span>
 
 		<% if current_user?(post.user)%>
-		<div class="pull-right">
-			<i class="icon-delete-point"></i>
+		<div class="pull-right">			
 			<i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%>
 			|
-			<i class="icon-trash"></i><%= link_to "delete", 	post, method: :delete, confirm: "Are your sure?" %>			
-		</div>
-
+			<i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %>
+			|
+			<i class="icon-hand-up"></i><%= link_to "read more", post_path(post) %>			
+		</div>			
 		<% end %>
+		
 		
 	</div>
 	<p class="body-padding">
