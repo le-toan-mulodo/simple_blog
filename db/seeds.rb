@@ -14,4 +14,4 @@ type_user_lists.each do |type, description|
   Role.create( name: type, description: description )
 end
 
-User.create(name: 'toan', email: 'le.toan@mulodo.com', address: 'HCMC', male: true, password_digest: "$2a$10$PdM77lyk0R0pxvmy5drNceFqanwq4fRZ4q.yPCgw2Hn1yf2S.GiOm",  role_id: 2)
+User.create(name: 'toan', email: 'le.toan@mulodo.com', address: 'HCMC', male: true, password: '123456', password_confirmation: '123456',  role_id: 2)
