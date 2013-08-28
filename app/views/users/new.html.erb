@@ -1,6 +1,6 @@
 <%= provide(:title, 'Sign up')%>
 <div class="row">
-	<div class="span6 offset3 hero-unit">
+	<div class="span6 offset3 hero-unit small-padding">
 		<h3>Sign up</h3>
 		<%= form_for(@user) do |f| %>
 		<%= render 'shared/error_messages', object: f.object%>

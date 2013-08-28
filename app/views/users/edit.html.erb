@@ -1,6 +1,7 @@
-<% provide(:title, "Edit user")%> <h1>Update your profile</h1>
+<% provide(:title, "Edit user")%>
 <div class="row">
-	<div class="span6 offset3">
+	<div class="span6 offset3 hero-unit small-padding">
+		<h3>Update your profile</h3>
 		<%= form_for(@user) do |f| %>
 		<%= render 'shared/error_messages', object: f.object %>
 		<%= f.label :name%>
@@ -12,27 +13,27 @@
 		<%= f.label :address%>
 		<%= f.text_field :address %>
 		<% if @user.male %>
-			<%= f.radio_button :male, "male", checked: true, class: 'inline' %>
+		<%= f.radio_button :male, "male", checked: true, class: 'inline' %>
 		<% else %>
-			<%= f.radio_button :male, "male", class: 'inline' %>
+		<%= f.radio_button :male, "male", class: 'inline' %>
 		<% end%>
 
 		<%= f.label :male, "Male", value: 'male', class: 'inline' %>
 
 		<% if @user.male %>
-			<%= f.radio_button :male, "female", class: 'inline'  %>
+		<%= f.radio_button :male, "female", class: 'inline'  %>
 		<%else %>
-			<%= f.radio_button :male, "female", checked: true,  class: 'inline'  %>
+		<%= f.radio_button :male, "female", checked: true,  class: 'inline'  %>
 		<% end%>
 
 		<%= f.label :male, "Female", value: 'female', class: 'inline'%>
 		<p class="body-padding">
 			<%= gravatar_for @user%>
-			<a href="http://gravatar.com/emails"> change the picture </a>
+			<a href="http://gravatar.com/emails"> update picture </a>
 
 		</p>
 
-		<%= f.submit "Save changes", class: "btn btn-large btn-primary"%>
+		<%= f.submit "Save changes", class: "btn btn-medium btn-primary"%>
 		<% end %>
 	</div>
 </div>

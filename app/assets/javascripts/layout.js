@@ -1,11 +1,12 @@
 $(document).ready(function() {
-	
+
 	$(window).scroll(function() {
 		if ($(this).scrollTop()) {
 			$('#toTop').fadeIn();
 		} else {
 			$('#toTop').fadeOut();
 		}
+
 	});
 
 	$("#toTop").on('click', function() {
@@ -17,5 +18,8 @@ $(document).ready(function() {
 			scrollTop : 0
 		}, 400);
 	});
+
+	 
+	
 
 });
