@@ -1,6 +1,6 @@
 <%= provide(:title, 'Sign up')%>
 <div class="row">
-	<div class="span6 offset3 hero-unit small-padding">
+	<div class="span6 offset3 hero-unit small-padding small-transparent">
 		<h3>Sign up</h3>
 		<%= form_for(@user) do |f| %>
 		<%= render 'shared/error_messages', object: f.object%>
@@ -24,3 +24,14 @@
 		<% end %>
 	</div>
 </div>
+
+<style type="text/css">
+	body {
+				
+		background: url(/assets/images.jpg) no-repeat center center fixed;		 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+</style>

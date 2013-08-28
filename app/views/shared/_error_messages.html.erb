@@ -5,7 +5,7 @@
 	</div>
 	<ul>
 		<% object.errors.full_messages.uniq.each do |message| %>
-		<li>
+		<li class="small-text-size">
 			<%= simple_format message %>
 		</li>
 		<% end %>

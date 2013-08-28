@@ -1,16 +1,18 @@
 <% provide(:title, "Your articles") %>
 <div class="row">
-	<aside class="span3" style="" >
+	<aside class="span4" style="" >
 		<section>
 			<h1> <%= gravatar_for @user %>
 			<%= @user.name %> </h1>
 		</section>
 		<div class="clear-both">
-			<i class="icon-play-circle icon-large"></i><%= @user.email %> <br/>
+			<i class="icon-play-circle icon-large"></i><%= @user.email %>
+			<br/>
 			<i class="icon-road icon-large"></i><%= @user.address %>
+
 		</div>
 	</aside>
-	<div class="span9">
+	<div class="span7 small-left-margin">
 		<%= render partial: 'posts/summary', locals: {posts: @posts} %>
 	</div>
 </div>

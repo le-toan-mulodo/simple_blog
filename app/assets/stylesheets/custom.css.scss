@@ -147,6 +147,10 @@ input, textarea, select, .uneditable-input {
   opacity: 0.5
 }
 
+.small-transparent
+{
+  opacity: 0.8
+}
 
 .comment
 {      
@@ -205,3 +209,20 @@ input, textarea, select, .uneditable-input {
   padding:20px !important
 }
 
+
+.small-text-size
+{
+  font-size: small;
+  color: red;
+  
+}
+
+.small-margin
+{
+  margin: 10px;
+}
+
+.small-left-margin
+{
+  margin-left: 40px
+}
