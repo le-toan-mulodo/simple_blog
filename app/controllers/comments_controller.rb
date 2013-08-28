@@ -6,17 +6,28 @@ class CommentsController < ApplicationController
          
     @comment = current_user.comments.build(body: content_comment, post: post)
     if @comment.save
-      flash[:success] = "You commented successfully"
+      #flash[:success] = "You commented successfully"
+      @list_comments = post.comments.all
+      respond_to do |format|
+        format.html { redirect_to post}
+        format.js {}
+      end
     else
       flash[:error] = "You are failed to comment"
+       redirect_to post
     end
-    redirect_to post
+    
   end
 
   def destroy
     @comment = Comment.find(params[:id])
+    post = @comment.post    
     @comment.destroy
-    redirect_to @comment.post, success: "You deleted the comment successfuly"
+    @list_comments = post.comments.all
+    respond_to do |format|
+      format.js {}
+    end
+    #redirect_to @comment.post, success: "You deleted the comment successfuly"
   end
 
   private

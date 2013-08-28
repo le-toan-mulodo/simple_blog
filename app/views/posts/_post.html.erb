@@ -22,8 +22,7 @@
 			<i class="icon-hand-up"></i><%= link_to "read more", post_path(post) %>			
 		</div>			
 		<% end %>
-		
-		
+				
 	</div>
 	<p class="body-padding">
 		<% if current_page?(posts_path)%>
@@ -34,15 +33,14 @@
 		<% else%>
 		<%= simple_format(post.body) %>
 		<%end %>
-
 	</p>
 
 	<% if post.comments.any?%>
-	<div class="alert alert-info">
+	<div class="alert alert-info" id="number-comments">
 		<i class="icon-comment icon-large"> </i> <%= pluralize(post.comments.count, "comment") %>
 	</div>
 	<% else%>
-	<div class="alert alert-info">
+	<div class="alert alert-info" id="number-comments" >
 		<i class="icon-comment icon-large"> </i> No comments
 	</div>
 	<%end %>

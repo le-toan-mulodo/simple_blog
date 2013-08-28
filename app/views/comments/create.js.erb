@@ -1,0 +1,9 @@
+//update list comments for the article
+$('#list-comments').html("<%= escape_javascript(render(partial: 'comments', locals: {comments: @list_comments})) %>");
+
+//update body-comment
+$('#comment_body').val("");
+
+//update a number of comments for the article
+$("#number-comments").text("<%= escape_javascript(render(partial: 'number_comments', locals: {comments: @list_comments})) %>");
+
