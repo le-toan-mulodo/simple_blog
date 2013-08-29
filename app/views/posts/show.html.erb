@@ -2,6 +2,7 @@
 
 <%= render partial: 'comments/comments', locals: {comments: @post.comments}%>
 
+<%= unless current_user.nil? %>
 <div class="padding-content-left content-bottom">
 	<%= form_for [@post, @post.comments.build], remote: true do |f| %>
 	<%= f.label :body, "Your comment", class: 'title-comment'%>
@@ -10,3 +11,4 @@
 	<%= f.submit "Submit", class: 'btn btn-primary btn-large'%>
 	<% end%>
 </div>
+<% end %>
