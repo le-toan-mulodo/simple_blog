@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "You created your account successfully"
+      #flash[:success] = "You created your account successfully"
       redirect_to  users_path
     else
       render 'new'
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     is_male = (params[:user][:male] == "male")?true:false
     params[:user][:male] = is_male
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile is updated"
+      #flash[:success] = "Profile is updated"
       sign_in @user
       redirect_to @user
     else

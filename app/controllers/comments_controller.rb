@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
         format.js {}
       end
     else
-      flash[:error] = "You are failed to comment"
+      #flash[:error] = "You are failed to comment"
        redirect_to post
     end
     

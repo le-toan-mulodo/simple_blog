@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      flash[:success] = "You created a post successfully"
+      #flash[:success] = "You created a post successfully"
       redirect_to user_path(current_user)
     else
       render 'new'
