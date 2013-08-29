@@ -6,23 +6,23 @@
 		|
 		<span class="timestampe"> Updated <%= time_ago_in_words(post.updated_at)%> ago</span>
 		<% unless current_page?(posts_path)%>
-			<span class="pull-right"><i class="icon-list"></i> <%= link_to "Back to lists", posts_path %> </span>
+		<span class="pull-right"><i class="icon-list"></i> <%= link_to "Back to lists", posts_path %> </span>
 		<% end%>
-		
+
 		<br/>
-		
+
 		<span class="timestampe"> by <i class="icon-large icon-user"></i><%= (post.user.name)%> </span>
 
 		<% if current_user?(post.user)%>
-		<div class="pull-right">			
+		<div class="pull-right">
 			<i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%>
 			|
 			<i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %>
 			|
-			<i class="icon-hand-up"></i><%= link_to "read more", post_path(post) %>			
-		</div>			
+			<i class="icon-hand-up"></i><%= link_to "read more", post_path(post) %>
+		</div>
 		<% end %>
-				
+
 	</div>
 	<p class="body-padding">
 		<% if current_page?(posts_path)%>
@@ -35,15 +35,10 @@
 		<%end %>
 	</p>
 
-	<% if post.comments.any?%>
+	 
 	<div class="alert alert-info" id="number-comments">
-		<i class="icon-comment icon-large"> </i> <%= pluralize(post.comments.count, "comment") %>
+		<%= render partial: 'comments/number_comments', locals: {comments: post.comments}%>
 	</div>
-	<% else%>
-	<div class="alert alert-info" id="number-comments" >
-		<i class="icon-comment icon-large"> </i> No comments
-	</div>
-	<%end %>
 
 </div>
 

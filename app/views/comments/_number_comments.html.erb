@@ -1,1 +1,9 @@
-<%= pluralize(comments.count, "comment") %>
+<% if comments.any?%>
+
+<i class="icon-comment icon-large"> </i> <%= pluralize(comments.count, "comment") %>
+
+<% else%>
+
+<i class="icon-comment icon-large"> </i> No comments
+
+<%end %>

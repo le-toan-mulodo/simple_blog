@@ -41,6 +41,11 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+group :test do
+  gem 'cucumber-rails', '1.4.0', require: false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
