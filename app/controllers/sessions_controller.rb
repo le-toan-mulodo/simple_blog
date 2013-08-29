@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       sign_in @user
       redirect_back_or posts_path
     else
-      flash[:error] = "Invalid email or password"
+      flash.now[:error] = "Invalid email or password"
       render 'new'
     end
   end
