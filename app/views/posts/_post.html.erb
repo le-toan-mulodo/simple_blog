@@ -6,7 +6,9 @@
 		|
 		<span class="timestampe"> Updated <%= time_ago_in_words(post.updated_at)%> ago</span>
 		<% unless current_page?(posts_path)%>
-		<span class="pull-right"><i class="icon-list"></i> <%= link_to "Back to lists", posts_path %> </span>
+			<span class="pull-right"><i class="icon-list"></i> <%= link_to "Back to lists", posts_path %> </span>
+		<% else%>
+			<span class="pull-right"><i class="icon-hand-up"></i><%= link_to "read more", post_path(post) %> </span>
 		<% end%>
 
 		<br/>
@@ -18,8 +20,6 @@
 			<i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%>
 			|
 			<i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %>
-			|
-			<i class="icon-hand-up"></i><%= link_to "read more", post_path(post) %>
 		</div>
 		<% end %>
 
@@ -35,7 +35,6 @@
 		<%end %>
 	</p>
 
-	 
 	<div class="alert alert-info" id="number-comments">
 		<%= render partial: 'comments/number_comments', locals: {comments: post.comments}%>
 	</div>

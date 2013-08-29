@@ -18,8 +18,8 @@ module SessionsHelper
 
   def current_user?(user)
     return (user == current_user) || (current_user && current_user.role && current_user.role.name == "Admin")
-  end
-
+  end  
+    
   def signed_in_user
     unless signed_in?
       save_url
