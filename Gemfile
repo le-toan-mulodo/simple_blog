@@ -32,19 +32,20 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
-# Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
-group :test do
+group :development, :test do
+  #gem 'cucumber-rails', '1.4.0', require: false
+  #gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'sqlite3'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem "rspec-rails", ">= 2.0.0"   
   gem 'cucumber-rails', '1.4.0', require: false
-  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
