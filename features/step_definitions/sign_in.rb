@@ -27,5 +27,7 @@ When(/^the user submits valid signin information$/) do
 end
 
 Then(/^the user should see the profile page$/) do
+  
   page.has_content?("Create a post")
+  print page.html
 end
