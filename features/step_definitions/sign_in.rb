@@ -21,13 +21,12 @@ Given(/^the user has an account$/) do
 end
 
 When(/^the user submits valid signin information$/) do
-  fill_in "session_email", with: 'teo@gmail.com'
-  fill_in "session_password", with: 'secret'
+  fill_in "session_email", with: 'le.toan@mulodo.com'
+  fill_in "session_password", with: '123456'
   click_button "Sign in"
 end
 
 Then(/^the user should see the profile page$/) do
   
-  page.has_content?("Create a post")
-  print page.html
+  page.has_content?("Create a post")  
 end

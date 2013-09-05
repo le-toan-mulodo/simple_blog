@@ -3,18 +3,16 @@ When(/^visit blog path$/) do
 end
 
 When(/^read the first article$/) do
-   #page.find('.alert-info').value
-   #page.should have_content("Blogs")
-   print page.html
+#page.find('.alert-info').value
+  first(:css, 'div.alert-info > span > a').click
 end
 
 When(/^send a comment for the article$/) do
- pending # express the regexp above with the code you wish you had
+  fill_in "comment_body", with: "my first comment"
+  click_button "Submit"
 end
 
 Then(/^a number of comments should increase$/) do
- pending # express the regexp above with the code you wish you had
+  page.should have_content("my first comment")
 end
-
-
 

@@ -1,4 +1,4 @@
-Feature: Comments
+Feature: Comments 
 	In order to create or delete comments
 	As an user has permission
 	I want to create or delete comments

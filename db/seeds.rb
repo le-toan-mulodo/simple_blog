@@ -15,3 +15,6 @@ type_user_lists.each do |type, description|
 end
 
 User.create(name: 'toan', email: 'le.toan@mulodo.com', address: 'HCMC', male: true, password: '123456', password_confirmation: '123456',  role_id: 2)
+
+Post.create(title: "Cứu kịp cụ bà trong đám cháy ở chung cư Ngô Gia Tự", body: "Được biết, căn phòng do ông Nguyễn Hải Bằng 33 tuổ...", created_at: "2013-08-27 11:20:09", updated_at: "2013-08-27 11:20:09", user_id: 1)
+Post.create(title: "Test 1 ", body: "ĐTest 2...", created_at: "2013-08-27 11:20:09", updated_at: "2013-08-27 11:20:09", user_id: 1)

@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'capybara-screenshot/cucumber'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -28,6 +29,12 @@ require 'cucumber/rails'
 #
 ActionController::Base.allow_rescue = false
 
+
+#Capybara.run_server = true 
+#Capybara.server_port = 7000
+#Capybara.app_host = "http://localhost:#{Capybara.server_port}" 
+
+
 # Remove/comment out the lines below if your app doesn't have a database.
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
 begin
@@ -35,6 +42,8 @@ begin
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
+
+Cucumber::Rails::Database.autorun_database_cleaner = false
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:

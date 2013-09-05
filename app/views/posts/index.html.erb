@@ -1,6 +1,7 @@
-<% provide(:title, "All users")%>
+<% provide(:title, "All posts")%>
 
 <h3>Blogs <%= link_to "Create a post", new_post_path, class: 'pull-right' %></h3>
+
 <%= will_paginate @posts %>
 <%= render @posts %>
 <%= will_paginate @posts %>
