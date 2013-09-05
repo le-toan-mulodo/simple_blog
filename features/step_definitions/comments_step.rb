@@ -13,6 +13,7 @@ When(/^send a comment for the article$/) do
 end
 
 Then(/^a number of comments should increase$/) do
+  #print page.html
   page.should have_content("my first comment")
 end
 
