@@ -4,5 +4,6 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   
-  default_scope order: 'posts.updated_at DESC'
+  #default_scope order: 'posts.updated_at DESC'
+  default_scope -> { order('updated_at DESC') }  
 end

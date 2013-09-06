@@ -7,12 +7,12 @@ module ApplicationHelper
     end
   end
 
-  def cut_body(body)
-    first_100_words =  body.split(" ");
-    if first_100_words.count <= 100
+  def cut_body(body, number)
+    shortcut_body =  body.split(" ");
+    if shortcut_body.count <= number
     body
     else
-      first_100_words.first(100).join(" ") + "..."
+      shortcut_body.first(number).join(" ") + "..."
     end
 
   end
@@ -20,4 +20,10 @@ module ApplicationHelper
   def nl2br(s)
     s.gsub(/\n/, '<br/>')
   end
+  
+  def format_datetime_to_date(the_date)
+      if !the_date.nil? 
+         the_date.strftime('%Y-%m-%d')
+      end
+   end
 end

@@ -37,12 +37,11 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
+gem 'selenium-webdriver'
 group :development, :test do
   #gem 'cucumber-rails', '1.4.0', require: false
-  #gem 'database_cleaner', github: 'bmabey/database_cleaner'
-  gem 'selenium-webdriver'  
-  gem 'capybara-screenshot'
+  #gem 'database_cleaner', github: 'bmabey/database_cleaner'  
+  gem 'capybara-screenshot'  
   gem 'sqlite3'
   gem 'database_cleaner'
   gem 'capybara'

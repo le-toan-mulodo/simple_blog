@@ -2,32 +2,32 @@
 	Your articles <%= link_to "Create a post", new_post_path, class: 'pull-right' %>
 </div>
 <% if posts.any? %>
-	<%= will_paginate posts %>
-	<table class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>Title</th>
-				<th>Created </th>
-				<th>Upadted</th>
-				<th>Edit</th>
-				<th>Delete</th>
-				<th>Read</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% posts.each do |post|%>
-			<tr>
-				<td><%= post.title %></td>
-				<td><%= post.created_at %></td>
-				<td><%= post.updated_at %></td>
-				<td><i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%> </td>
-				<td><i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %></td>
-				<td><i class="icon-hand-up"></i><%= link_to "read", post_path(post) %></td>
-			</tr>
-			<% end%>
-		</tbody>
-	</table>
-	<%= will_paginate posts %>
+<%= will_paginate posts %>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Upadted</th>
+			<th>Edit</th>
+			<th>Delete</th>
+			<th>Read</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% posts.each do |post|%>
+		<tr>
+			<td><%= cut_body(post.title,20) %></td>
+			<td><%= cut_body(post.body,10) %></td>
+			<td><%= format_datetime_to_date post.updated_at %></td>
+			<td><i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%> </td>
+			<td><i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %></td>
+			<td><i class="icon-hand-up"></i><%= link_to "read", post_path(post) %></td>
+		</tr>
+		<% end%>
+	</tbody>
+</table>
+<%= will_paginate posts %>
 <% else%>
-	You have no articles
+You have no articles
 <% end%>

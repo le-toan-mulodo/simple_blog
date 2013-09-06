@@ -3,7 +3,7 @@ When(/^visit blog path$/) do
 end
 
 When(/^read the first article$/) do
-#page.find('.alert-info').value
+  #print page.html
   first(:css, 'div.alert-info > span > a').click
 end
 
@@ -13,7 +13,6 @@ When(/^send a comment for the article$/) do
 end
 
 Then(/^a number of comments should increase$/) do
-  #print page.html
   page.should have_content("my first comment")
 end
 

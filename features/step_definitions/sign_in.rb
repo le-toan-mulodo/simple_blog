@@ -26,7 +26,6 @@ When(/^the user submits valid signin information$/) do
   click_button "Sign in"
 end
 
-Then(/^the user should see the profile page$/) do
-  
+Then(/^the user should see the profile page$/) do  
   page.has_content?("Create a post")  
 end

@@ -26,7 +26,7 @@
 	</div>
 	<p class="body-padding">
 		<% if current_page?(posts_path)%>
-		<%= cut_body post.body.html_safe %>
+		<%= cut_body(post.body.html_safe,100) %>
 		<div>
 			<%= link_to "Read more >>", post_path(post)%>
 		</div>
