@@ -21,7 +21,7 @@
 			<td><%= cut_body(post.body,10) %></td>
 			<td><%= format_datetime_to_date post.updated_at %></td>
 			<td><i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%> </td>
-			<td><i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %></td>
+			<td><i class="icon-trash"></i><%= link_to "delete", post, method: :delete, data: {confirm: "Are your sure?"} %></td>
 			<td><i class="icon-hand-up"></i><%= link_to "read", post_path(post) %></td>
 		</tr>
 		<% end%>

@@ -45,6 +45,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'factory_girl_rails'
   gem "rspec-rails", ">= 2.0.0"   
   gem 'cucumber-rails', '1.4.0', require: false
 end

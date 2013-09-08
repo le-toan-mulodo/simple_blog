@@ -21,7 +21,7 @@
 			<td><%= user.address%></td>
 			<td> <%= (user.male == true)?"Male": "Female"%> </td>
 			<% if current_user != user%>
-			<td> <%= link_to "Delete", user, method: :delete, confirm: "Are you sure?"%> </td>
+			<td> <%= link_to "Delete", user, method: :delete, data: {confirm: "Are you sure?"}%> </td>
 			<% else%>
 			<td>Here you are</td>
 

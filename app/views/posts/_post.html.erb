@@ -19,7 +19,7 @@
 		<div class="pull-right">
 			<i class="icon-edit"></i><%= link_to "edit", edit_post_path(post)%>
 			|
-			<i class="icon-trash"></i><%= link_to "delete", post, method: :delete, confirm: "Are your sure?" %>
+			<i class="icon-trash"></i><%= link_to "delete", post, method: :delete, data: {confirm: "Are your sure?"} %>
 		</div>
 		<% end %>
 

@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 
   def admin_type
     if current_user && current_user.role && current_user.role.name != "Admin"
-      redirect_to root_path, notice: "You must be admin to do that!"
+      redirect_to root_path
     end
   end
 end

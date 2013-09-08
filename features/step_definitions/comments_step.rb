@@ -2,8 +2,7 @@ When(/^visit blog path$/) do
   visit posts_path
 end
 
-When(/^read the first article$/) do
-  #print page.html
+When(/^read the first article$/) do  
   first(:css, 'div.alert-info > span > a').click
 end
 

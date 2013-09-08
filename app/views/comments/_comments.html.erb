@@ -4,7 +4,7 @@
 	<div class="comment">
 		<i class="icon-large icon-user"></i> <%= (comment.user.nil?)?"Anonymous":comment.user.name %> | <%= time_ago_in_words comment.created_at %> ago
 		<% if  current_user && current_user.role.name == "Admin" %>
-		<i class="icon-large icon-trash pull-right"></i><%= link_to "delete", comment, method: :delete, confirm: "Are you sure?", remote: true, class: "pull-right" %>
+		<i class="icon-large icon-trash pull-right"></i><%= link_to "delete", comment, method: :delete, data: {confirm: "Are you sure?"}, remote: true, class: "pull-right" %>
 		<% end%>
 		<div class="padding-content-left border-blue-dash">
 			<%= simple_format(comment.body) %>
