@@ -14,5 +14,5 @@ When(/^he click delete the first user which ables to be deleted from this sectio
 end
 
 Then(/^that user should be gone away$/) do
-  Post.count.should == @user_count - 1
+  User.count.should == @user_count - 1
 end
