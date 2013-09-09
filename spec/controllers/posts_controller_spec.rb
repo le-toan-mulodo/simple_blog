@@ -53,8 +53,8 @@ describe PostsController do
   describe 'PUT update' do
     before :each do
       @post = FactoryGirl.create(:post, title: "a title", body: "a body", user_id: 1)
-      @user = FactoryGirl.create(:user)
-      session[:remember_token] = @user.remember_token
+      @admin = FactoryGirl.create(:admin)
+      session[:remember_token] = @admin.remember_token
     end
 
     context "valid attributes" do
@@ -80,8 +80,8 @@ describe PostsController do
   describe 'DELETE destroy' do
     before :each do
       @post = FactoryGirl.create(:post)
-      @user = FactoryGirl.create(:user)
-      session[:remember_token] = @user.remember_token
+      @admin = FactoryGirl.create(:admin)
+      session[:remember_token] = @admin.remember_token
     end
     it "deletes the post" do
       expect{ delete :destroy, id: @post }.to change(Post,:count).by(-1)

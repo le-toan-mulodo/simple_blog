@@ -11,7 +11,7 @@ describe CommentsController do
     context "with valid attributes" do
       it "creates a new comment" do
         temp_post = {post_id: @post.id, user_id: @user.id, body: "anything"}
-        expect { post :create, :comment => temp_post}.to change(Comment,:count).by(1)
+        expect { post :create, :comment => temp_post, :post_id => @post.id}.to change(Comment,:count).by(1)
       end
       
     end
@@ -19,7 +19,7 @@ describe CommentsController do
     context "with invalid attributes" do
       it "creates a new comment" do
         temp_post = {post_id: @post.id, user_id: @user.id, body: nil}
-        expect { post :create, :comment => temp_post}.to_not change(Comment,:count)
+        expect { post :create, :comment => temp_post, :post_id => @post.id}.to_not change(Comment,:count)
       end
 
       
@@ -34,10 +34,11 @@ describe CommentsController do
       @comment = FactoryGirl.create(:comment, body: 'any thing', user_id: @user.id, post_id: @post.id)
       
       @admin = FactoryGirl.create(:admin)
-      session[:remember_token] = @user.remember_token
+      session[:remember_token] = @admin.remember_token
     end
+    
     it "deletes the comment" do
-      expect{ delete :destroy, id: @comment }.to change(Comment,:count).by(-1)
+      expect{ delete :destroy, id: @comment}.to change(Comment,:count).by(-1)
     end   
   end
 
