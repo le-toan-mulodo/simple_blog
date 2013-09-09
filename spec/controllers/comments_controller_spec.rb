@@ -32,13 +32,13 @@ describe CommentsController do
       @user = FactoryGirl.create(:user)
       @post = FactoryGirl.create(:post)      
       @comment = FactoryGirl.create(:comment, body: 'any thing', user_id: @user.id, post_id: @post.id)
-      
+            
       @admin = FactoryGirl.create(:admin)
       session[:remember_token] = @admin.remember_token
     end
     
     it "deletes the comment" do
-      expect{ delete :destroy, id: @comment}.to change(Comment,:count).by(-1)
+      expect { delete :destroy, :id => @comment}.to change(Comment,:count).by(-1)
     end   
   end
 

@@ -3,6 +3,7 @@ require 'spec_helper'
 describe UsersController do
   before :each do
     @user = FactoryGirl.create(:user)
+    
     @admin = FactoryGirl.create(:admin)
     session[:remember_token] = @admin.remember_token
   end
@@ -21,7 +22,7 @@ describe UsersController do
 
     it "populates an array of user" do      
       get :index
-      assigns(:users).should eq([@user])
+      assigns(:users).should eq([@user, @admin])
     end
 
   end
