@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(body: content_comment, post: post)
     if @comment.save
       #flash[:success] = "You commented successfully"
-      @list_comments = post.comments.all
+      @list_comments = post.comments.to_a
       respond_to do |format|
         format.html { redirect_to post}
         format.js {}
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     post = @comment.post    
     @comment.destroy
-    @list_comments = post.comments.all
+    @list_comments = post.comments.to_a
     respond_to do |format|
       format.js {}
     end
