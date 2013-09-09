@@ -4,6 +4,7 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+
 require 'cucumber/rails'
 require 'capybara-screenshot/cucumber'
 #require 'factory_girl/step_definitions'

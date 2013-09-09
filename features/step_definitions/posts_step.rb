@@ -12,10 +12,15 @@ Then(/^you should see the article in your page$/) do
   page.has_content?("new post title")
 end
 
-When(/^edit the first article$/) do
+When(/^edit the first article$/) do  
   first(:css, "div.alert-info a:contains('edit')").click
   
 end
+
+When(/^exist an article$/) do
+  FactoryGirl.create(:post)
+end
+
 
 When(/^edit title, body of the article$/) do
   fill_in "post_title", with: "updated title of the article"

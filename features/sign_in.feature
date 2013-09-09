@@ -23,6 +23,19 @@ Feature: Sign in
 		And the user has an account
 		When the user submits valid signin information
 		Then the user should see the profile page
+	
+	
+	Scenario: Successful signin as Admin
+		Given a user visits the signin page
+		And the user has an account
+		When the user submits valid signin information as Admin
+		Then the user should see user's management
 		
+	Scenario: Successful signout 
+		Given a user visits the signin page
+		And the user has an account
+		When the user submits valid signin information		
+		And the user click sign out
+		Then the user should back to home page 
 		
 		

@@ -15,8 +15,9 @@ Feature: Posts
 	Scenario: Edit a new article when logged in the website
 		Given a user visits the signin page
 		And the user has an account
-		When the user submits valid signin information
-		And visit blog path		
+		When the user submits valid signin information as Admin
+		And exist an article
+		And visit blog path				
 		And edit the first article
 		And edit title, body of the article  
 		Then you should see the updated article
@@ -25,7 +26,8 @@ Feature: Posts
 	Scenario: Delete a new article when logged in the website
 		Given a user visits the signin page
 		And the user has an account
-		When the user submits valid signin information
+		When the user submits valid signin information as Admin
+		And exist an article
 		And visit blog path		
 		And delete the first article		 
 		Then you should no see the deleted article  

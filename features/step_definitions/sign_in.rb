@@ -43,3 +43,25 @@ When(/^he submit invalid signin information with email is "(.*?)"$/) do |arg1|
   fill_in "session_password", with: '123456'
   click_button "Sign in"
 end
+
+
+When(/^the user submits valid signin information as Admin$/) do
+  fill_in "session_email", with: 'le.toan@mulodo.com'
+  fill_in "session_password", with: '123456'
+  click_button "Sign in"
+end
+
+Then(/^the user should see user's management$/) do
+  find(:css, "nav > ul a:contains('Users')").should be_visible
+end
+
+
+When(/^the user click sign out$/) do
+  click_on "Sign out"
+end
+
+Then(/^the user should back to home page$/) do
+  current_path.should == root_path 
+end
+
+
