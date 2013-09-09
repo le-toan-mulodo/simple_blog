@@ -6,7 +6,7 @@
 
 require 'cucumber/rails'
 require 'capybara-screenshot/cucumber'
-require 'factory_girl/step_definitions'
+#require 'factory_girl/step_definitions'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -40,7 +40,7 @@ ActionController::Base.allow_rescue = false
 # For some databases (like MongoDB and CouchDB) you may need to use :truncation inssstead.
 
 
-Cucumber::Rails::Database.autorun_database_cleaner = true
+Cucumber::Rails::Database.autorun_database_cleaner = false
 
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
