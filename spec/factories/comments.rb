@@ -1,10 +1,10 @@
 FactoryGirl.define do
-  factory :comment do |f|
-    f.body "a title"
-    f.user_id 1
-    f.post_id 1
+  factory :comment do
+    association :user, factory: :another_user   
+    body "Hello my body"    
+    association :post, factory: :post
   end
-  
+
   factory :invalid_comment, parent: :comment do |f|
     f.body nil
   end

@@ -2,7 +2,7 @@ DemoRails::Application.routes.draw do
   
   resources :comments, only: [:destroy]
   resources :posts do
-    resources :comments, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
   end
   
   resources :sessions, only: [:new, :create, :destroy]

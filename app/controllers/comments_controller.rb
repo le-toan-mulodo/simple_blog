@@ -25,6 +25,7 @@ class CommentsController < ApplicationController
     @comment.destroy
     @list_comments = post.comments.to_a
     respond_to do |format|
+      format.html { redirect_to post}      
       format.js {}
     end
     #redirect_to @comment.post, success: "You deleted the comment successfuly"
