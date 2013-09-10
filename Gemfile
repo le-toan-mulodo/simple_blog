@@ -40,7 +40,8 @@ end
 gem 'selenium-webdriver'
 group :development, :test do
   #gem 'cucumber-rails', '1.4.0', require: false
-  #gem 'database_cleaner', github: 'bmabey/database_cleaner'  
+  #gem 'database_cleaner', github: 'bmabey/database_cleaner'
+  gem 'mysql2'  
   gem 'capybara-screenshot'  
   gem 'sqlite3'
   gem 'database_cleaner', git: "https://github.com/scottwillson/database_cleaner"
