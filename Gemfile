@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 group :doc do
 # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  gem 'sdoc', :require => false
 end
 gem  'activesupport', '4.0.0.rc2'
 
@@ -48,7 +48,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails', '1.1.rc1'
   gem "rspec-rails", ">= 2.0.0"   
-  gem 'cucumber-rails', '1.4.0', require: false
+  gem 'cucumber-rails', '1.4.0', :require => false
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
