@@ -1,15 +1,10 @@
 language: ruby
 rvm:
-  - 1.9.3
-env:
-  - TAG_FILTER=~js DB=postgres RAILS_ENV=test
-  - TAG_FILTER=js DB=postgres RAILS_ENV=test
-install: touch ~/do_not_run_bundle
-before_script:
-  - "./script/travis/setup_database.sh &"
-  - "./script/travis/configure_rspec.sh &"
-  - "./script/travis/bundle_install.sh"
-  - "bundle exec ruby script/travis/bundle_cache.rb &"
-script: "bundle exec rspec --tag $TAG_FILTER && sleep 1"
-notifications:
-  email: false
+  - "1.8.7"
+  - "1.9.2"
+  - "1.9.3"    
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+# uncomment this line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
