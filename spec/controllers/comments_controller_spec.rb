@@ -1,17 +1,15 @@
 require 'spec_helper'
-
-
 describe CommentsController do
   describe "POST create" do
     before :each do
       @post = FactoryGirl.create(:post)
-      @user = FactoryGirl.create(:user)
-      session[:remember_token] = @user.remember_token
+      @another_user = FactoryGirl.create(:another_user)      
+      session[:remember_token] = @another_user.remember_token
     end
     
     context "with valid attributes" do
       it "creates a new comment" do
-        temp_post = {post_id: @post.id, user_id: @user.id, body: "anything"}
+        temp_post = {post_id: @post.id, user_id: @another_user.id, body: "anything"}
         expect { post :create, :comment => temp_post, :post_id => @post.id}.to change(Comment,:count).by(1)
       end
       
@@ -19,7 +17,7 @@ describe CommentsController do
     
     context "with invalid attributes" do
       it "creates a new comment" do
-        temp_post = {post_id: @post.id, user_id: @user.id, body: nil}
+        temp_post = {post_id: @post.id, user_id: @another_user.id, body: nil}
         expect { post :create, :comment => temp_post, :post_id => @post.id}.to_not change(Comment,:count)
       end
 
