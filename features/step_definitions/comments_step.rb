@@ -1,5 +1,5 @@
 When(/^visit blog path$/) do
-  visit posts_path
+  visit posts_path  
 end
 
 When(/^read the first article$/) do  

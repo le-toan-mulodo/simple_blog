@@ -4,7 +4,7 @@ Feature: Sign in
 	I want to log in into the webpage
 	
 	Scenario: Unsucessful signin because of empty email
-		Given a user visits the sign in page
+		Given a user visits the sign in page			
 		When he submit invalid signin information with email is empty
 		Then he should see an error message
 	
@@ -27,7 +27,7 @@ Feature: Sign in
 	
 	Scenario: Successful signin as Admin
 		Given a user visits the signin page
-		And the user has an account
+		And the user has an account as Admin
 		When the user submits valid signin information as Admin
 		Then the user should see user's management
 		

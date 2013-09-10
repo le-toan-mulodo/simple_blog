@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :post do |f|
-    f.title "a title"
-    f.body "a body"
-    f.user_id "1"    
+  factory :post do 
+    title "a title"
+    body "a body"
+    association :user, :factory => :user    
   end
   
   factory :invalid_post, parent: :post do 

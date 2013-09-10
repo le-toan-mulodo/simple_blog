@@ -43,9 +43,9 @@ group :development, :test do
   #gem 'database_cleaner', github: 'bmabey/database_cleaner'  
   gem 'capybara-screenshot'  
   gem 'sqlite3'
-  gem 'database_cleaner'
+  gem 'database_cleaner', git: "https://github.com/scottwillson/database_cleaner"
   gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '1.1.rc1'
   gem "rspec-rails", ">= 2.0.0"   
   gem 'cucumber-rails', '1.4.0', require: false
 end

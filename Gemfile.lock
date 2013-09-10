@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/scottwillson/database_cleaner
+  revision: 650bb117fa08f48c2a80df8284708a3afef18802
+  specs:
+    database_cleaner (0.9.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,14 +68,12 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
-    database_cleaner (0.7.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.0)
-    factory_girl (4.1.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.1.0)
-      factory_girl (~> 4.1.0)
+    factory_girl (2.0.5)
+    factory_girl_rails (1.1.rc1)
+      factory_girl (~> 2.0.0.rc)
       railties (>= 3.0.0)
     ffi (1.9.0)
     ffi (1.9.0-x86-mingw32)
@@ -191,8 +195,8 @@ DEPENDENCIES
   capybara-screenshot
   coffee-rails (~> 4.0.0)
   cucumber-rails (= 1.4.0)
-  database_cleaner
-  factory_girl_rails
+  database_cleaner!
+  factory_girl_rails (= 1.1.rc1)
   jbuilder (~> 1.2)
   jquery-rails
   pg

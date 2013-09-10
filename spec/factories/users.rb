@@ -1,15 +1,20 @@
 FactoryGirl.define do
-  factory :user do |f|
-    f.name "Jewr"
-    f.email "abds@gmail.com"
-    f.password "123456"
-    f.password_confirmation "123456"
-    f.role_id 1
+  factory :user do 
+    name "Jewr"
+    email "toan@mulodo.com"
+    password "123456"
+    password_confirmation "123456"
+    association :role, factory: :user_type
   end
   
   factory :admin, parent: :user do
-    email "admin@gmail.com"
-    role_id 2
+    email "admin@mulodo.com"
+    association :role, factory: :admin_type
+  end
+  
+  factory :another_user, parent: :user do
+    email "another@mulodo.com"
+    association :role, factory: :user_type
   end
      
 end

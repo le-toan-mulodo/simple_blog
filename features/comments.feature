@@ -1,3 +1,4 @@
+
 Feature: Comments 
 	In order to create or delete comments
 	As an user has permission
@@ -5,8 +6,9 @@ Feature: Comments
 	
 	Scenario: Create a comment successfully
 		Given a user visits the signin page
-		And the user has an account
-		When the user submits valid signin information
+		When the user has an account
+		And exist an article
+		And the user submits valid signin information		
 		And visit blog path
 		And read the first article
 		And send a comment for the article

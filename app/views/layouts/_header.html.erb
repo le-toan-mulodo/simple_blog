@@ -17,7 +17,7 @@
 					</li class="menu-header">
 
 					<li id="fat-menu" class="dropdown menu-header">
-						<a href="#" id="drop-toggle" class="dropdown-toggle" data-toggle="dropdown"> <%= "#{current_user.name} (#{current_user.role.name})" %> <b class="caret"></b> </a>
+						<a href="#" id="drop-toggle" class="dropdown-toggle" data-toggle="dropdown"> <%= "#{current_user.name} (#{current_user.role.name})" if (current_user && current_user.role) %> <b class="caret"></b> </a>
 						<ul class="dropdown-menu">
 							<li>
 								<%= link_to "Update your profile", edit_user_path(current_user) %>

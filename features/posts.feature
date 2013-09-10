@@ -14,7 +14,7 @@ Feature: Posts
 	
 	Scenario: Edit a new article when logged in the website
 		Given a user visits the signin page
-		And the user has an account
+		And the user has an account as Admin
 		When the user submits valid signin information as Admin
 		And exist an article
 		And visit blog path				
@@ -25,7 +25,7 @@ Feature: Posts
 		
 	Scenario: Delete a new article when logged in the website
 		Given a user visits the signin page
-		And the user has an account
+		And the user has an account as Admin
 		When the user submits valid signin information as Admin
 		And exist an article
 		And visit blog path		

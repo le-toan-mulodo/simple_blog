@@ -5,7 +5,9 @@ Feature:
 	
 	Scenario: delete another user successfully
 		Given a user visits the sign in page
-		When he logged in as admin
-		And he click manage users section
+		When the user has an account as Admin
+		And he logged in as admin
+		And exist users
+		And he click manage users section		
 		And he click delete the first user which ables to be deleted from this section
 		Then that user should be gone away

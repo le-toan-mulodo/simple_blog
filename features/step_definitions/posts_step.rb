@@ -12,15 +12,14 @@ Then(/^you should see the article in your page$/) do
   page.has_content?("new post title")
 end
 
-When(/^edit the first article$/) do  
+When(/^edit the first article$/) do
   first(:css, "div.alert-info a:contains('edit')").click
-  
+
 end
 
-When(/^exist an article$/) do
+When(/^exist an article$/) do  
   FactoryGirl.create(:post)
 end
-
 
 When(/^edit title, body of the article$/) do
   fill_in "post_title", with: "updated title of the article"
@@ -33,10 +32,9 @@ Then(/^you should see the updated article$/) do
   page.has_content?("updated body of the article")
 end
 
-
 When(/^delete the first article$/) do
   @post_count = Post.count
-  first(:css, "div.alert-info a:contains('delete')").click  
+  first(:css, "div.alert-info a:contains('delete')").click
 end
 
 Then(/^you should no see the deleted article$/) do
