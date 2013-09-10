@@ -189,7 +189,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  activesupport (= 4.0.0.rc2)
   bcrypt-ruby (= 3.0.1)
   bootstrap-sass
   bootstrap-will_paginate

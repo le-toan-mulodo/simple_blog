@@ -31,7 +31,7 @@ group :doc do
 # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', :require => false
 end
-gem  'activesupport', '4.0.0.rc2'
+
 
 group :production do
   gem 'pg'
