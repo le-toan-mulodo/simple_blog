@@ -15,7 +15,9 @@ Set Up:
   + bundle install 
   + rake db:migrate
   + rake db:test:prepare
-  + rake db:seed to initilize some data for development enviroment (you can append into it to indicate the environment you want like development default, production, test: rake db:seed RAILS_ENV=test)
+  + rake db:seed to initilize some data for development enviroment
+  (you can append into it to indicate the environment you want like: 
+       development - default, production, test: rake db:seed RAILS_ENV=test)
   
 and that's it.
   
