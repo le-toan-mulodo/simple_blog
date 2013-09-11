@@ -33,7 +33,7 @@ describe CommentsController do
       session[:remember_token] = @admin.remember_token
     end
     
-    it "deletes the comment" do                            
+    it "deletes the comment" do                             
       expect { delete :destroy,id: @comment}.to change(Comment,:count).by(-1)
     end   
   end
