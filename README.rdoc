@@ -1,4 +1,4 @@
-== README
+== SIMPLE BLOG (Ruby on Rails)
 
 
 The simple website allows users create articles, blogs and also able to comment with them. 
