@@ -1,13 +1,13 @@
 == SIMPLE BLOG (Ruby on Rails)
 
 
-The simple website allows users create articles, blogs and also able to comment with them. 
+The simple website allows users create articles, blogs and are also able to comment with them. 
 The site is built by Ruby on Rails framework.
 
-The guests able to register to become a member of the website. If the guests don't have the account then they just able to read articles, blogs and cannot comment with them.
+The guests are able to register to become a member of the website. If the guests don't have the account then they just able to read articles, blogs and cannot comment with them.
 Beside admin account is configured in config folder of the project. With admin account, you can manage users, articles, comments.
 
-Set Up:
+== Set Up:
   Download the project and uncompress the downloaded file
   Move to htdocs folder if use MAMP (or something like that)
   Go to the project with command line (use CD comamnd)
